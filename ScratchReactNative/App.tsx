@@ -6,19 +6,11 @@
  */
 
 import React from 'react';
-import Screen from './app/screens/Screen';
-import ListItem from './app/components/ListItem';
-import Icon from './app/components/Icon';
+import AccountScreen from './app/screens/AccountScreen';
 
 function App(): JSX.Element {
   return (
-    <Screen>
-      <ListItem
-        title="My title"
-        subTitle="My subtitle"
-        ImageComponent={<Icon name='mail' />}
-      />
-    </Screen>
+    <AccountScreen />
   );
 }
 
