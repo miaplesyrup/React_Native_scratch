@@ -1,20 +1,23 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import AppButton from '../components/AppButton';
 
 function WelcomeScreen(props) {
     return (
         <ImageBackground 
             style={styles.background}
-            source={require('../assets/dog.png')}
+            source={require('../assets/flobg.webp')}
         >
             <View style={styles.logoContainer}>
                 <Image 
                     style={styles.logo1}
                     source={require('../assets/free.png')} />
-                <Text>Sell What You Don't Need</Text>
+                <Text style={styles.tagline}>Sell What You Don't Need</Text>
             </View>
-            <View style={styles.loginButton}></View>
-            <View style={styles.registerButton}></View>
+            <View style={styles.buttonContainer}>
+                <AppButton title='Login' />
+                <AppButton title='Register' color='secondary'/>
+            </View>
         </ImageBackground>
     );
 }
@@ -25,23 +28,9 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end",
         alignItems: "center",
     },
-    loginButton: {
-        position: 'absolute',
-        bottom: 20,
-        left: 30,
-        width: 80,
-        height: 40,
-        borderRadius: 10,
-        backgroundColor: '#fc5c65',
-    },
-    registerButton: {
-        position: 'absolute',
-        bottom: 20,
-        right: 30,
-        width: 80,
-        height: 40,
-        borderRadius: 10,
-        backgroundColor: '#000'
+    buttonContainer: {
+        padding: 20,
+        width: '100%',
     },
     logo1: {
         width: 100,
@@ -51,6 +40,11 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 70,
         alignItems: "center",
+    },
+    tagline: {
+        fontSize: 25,
+        fontWeight: '600',
+        paddingVertical: 20,
     }
 })
 export default WelcomeScreen;

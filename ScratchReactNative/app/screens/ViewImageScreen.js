@@ -1,13 +1,17 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
+import AntdesignIcon from 'react-native-vector-icons/AntDesign';
 
 import colors from '../config/colors';
 
 function ViewImageScreen(props) {
     return (
         <View style={styles.container}>
-            <View style={styles.closeIcon}></View>
+            <View style={styles.closeIcon}>
+                <AntdesignIcon name='close' color='white' size={30} />
+            </View>
             <View style={styles.deleteIcon}>
+                <AntdesignIcon name='delete' color='white' size={30} />
             </View>
             <Image 
                 resizeMode='contain'
@@ -20,11 +24,9 @@ function ViewImageScreen(props) {
 
 const styles = StyleSheet.create({
     closeIcon: {
-        width: 50,
-        height: 50,
-        backgroundColor: colors.primary,
         position: 'absolute',
         top: 40,
+        left: 20,
     },
     container: {
         backgroundColor: colors.black,
@@ -32,11 +34,8 @@ const styles = StyleSheet.create({
     },
     deleteIcon: {
         position: 'absolute',
-        width: 50,
-        height: 50,
         marginTop: 40,
-        right: 30,
-        backgroundColor: colors.secondary,
+        right: 20,
     },
     image: {
         width: "100%",
