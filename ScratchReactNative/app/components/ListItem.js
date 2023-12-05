@@ -3,13 +3,13 @@ import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import colors from '../config/colors';
 import AppText from './AppText/AppText';
 
-function ListItem({ title, subTitle, image, ImageComponent, onPress}) {
+function ListItem({ title, subTitle, image, IconComponent, onPress}) {
     return (
         <TouchableHighlight 
             underlayColor={colors.light}
             onPress={onPress}>
             <View style={styles.container}>
-                {ImageComponent}
+                {IconComponent}
                 {image && <Image style={styles.image} source={image} />}
                 <View style={styles.detailsContainer}>
                     <AppText style={styles.title}>{title}</AppText>
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         padding: 15,
+        backgroundColor: colors.white,
     },
     detailsContainer: {
         marginLeft: 10,
