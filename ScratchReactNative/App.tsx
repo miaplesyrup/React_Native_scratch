@@ -12,8 +12,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import Screen from './app/screens/Screen';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
-import colors from './app/config/colors';
-
+import AuthNavigator from './app/navigation/AuthNavigation';
 
 // const Link = () => {
 //   const navigation = useNavigation();
@@ -80,7 +79,7 @@ const TabNavigator = () => (
     }}>
     <Tab.Screen 
       name="Feed" 
-      component={Tweets}
+      component={StackNavigator}
       options={{
         tabBarIcon: ({size,color}) => <AntDesignIcon name="home" size={size} color={color}/>
       }} />
@@ -91,7 +90,7 @@ const TabNavigator = () => (
 function App() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
